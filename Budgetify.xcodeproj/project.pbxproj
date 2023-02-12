@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8318EEA110A5DE1F1C9987DC /* Pods_Budgetify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FD80EF36619B420EB37565 /* Pods_Budgetify.framework */; };
 		F71B287D29978B8B00DF297F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B287C29978B8B00DF297F /* AppDelegate.swift */; };
 		F71B287F29978B8B00DF297F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B287E29978B8B00DF297F /* SceneDelegate.swift */; };
 		F71B288129978B8B00DF297F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B288029978B8B00DF297F /* ViewController.swift */; };
@@ -14,10 +15,14 @@
 		F71B288729978B8B00DF297F /* Budgetify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F71B288529978B8B00DF297F /* Budgetify.xcdatamodeld */; };
 		F71B288929978B8C00DF297F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F71B288829978B8C00DF297F /* Assets.xcassets */; };
 		F71B288C29978B8C00DF297F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F71B288A29978B8C00DF297F /* LaunchScreen.storyboard */; };
+		F729FEE62998A7BC00447DA8 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F729FEE52998A7BC00447DA8 /* AddViewController.swift */; };
 		F7BE364C2997A9F800F7F528 /* CustomTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE364B2997A9F800F7F528 /* CustomTabBarVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10FD80EF36619B420EB37565 /* Pods_Budgetify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Budgetify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12A99FFBB303E9E9D4C95E90 /* Pods-Budgetify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budgetify.debug.xcconfig"; path = "Target Support Files/Pods-Budgetify/Pods-Budgetify.debug.xcconfig"; sourceTree = "<group>"; };
+		87AA54E5F2651B33E0BFB163 /* Pods-Budgetify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budgetify.release.xcconfig"; path = "Target Support Files/Pods-Budgetify/Pods-Budgetify.release.xcconfig"; sourceTree = "<group>"; };
 		F71B287929978B8B00DF297F /* Budgetify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budgetify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F71B287C29978B8B00DF297F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F71B287E29978B8B00DF297F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,6 +32,7 @@
 		F71B288829978B8C00DF297F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F71B288B29978B8C00DF297F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F71B288D29978B8C00DF297F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F729FEE52998A7BC00447DA8 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		F7BE364B2997A9F800F7F528 /* CustomTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -35,17 +41,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8318EEA110A5DE1F1C9987DC /* Pods_Budgetify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62D6F83AE1C80888A2E8ACB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10FD80EF36619B420EB37565 /* Pods_Budgetify.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C5E9EABE15865C68FE3C438 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				12A99FFBB303E9E9D4C95E90 /* Pods-Budgetify.debug.xcconfig */,
+				87AA54E5F2651B33E0BFB163 /* Pods-Budgetify.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F71B287029978B8B00DF297F = {
 			isa = PBXGroup;
 			children = (
 				F71B287B29978B8B00DF297F /* Budgetify */,
 				F71B287A29978B8B00DF297F /* Products */,
+				9C5E9EABE15865C68FE3C438 /* Pods */,
+				62D6F83AE1C80888A2E8ACB4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,15 +89,40 @@
 			children = (
 				F71B287C29978B8B00DF297F /* AppDelegate.swift */,
 				F71B287E29978B8B00DF297F /* SceneDelegate.swift */,
-				F7BE364B2997A9F800F7F528 /* CustomTabBarVC.swift */,
-				F71B288029978B8B00DF297F /* ViewController.swift */,
-				F71B288229978B8B00DF297F /* Main.storyboard */,
+				F729FEE42998A77E00447DA8 /* Model */,
+				F729FEE32998A77000447DA8 /* View */,
+				F729FEE22998A76600447DA8 /* Controller */,
 				F71B288829978B8C00DF297F /* Assets.xcassets */,
 				F71B288A29978B8C00DF297F /* LaunchScreen.storyboard */,
 				F71B288D29978B8C00DF297F /* Info.plist */,
 				F71B288529978B8B00DF297F /* Budgetify.xcdatamodeld */,
 			);
 			path = Budgetify;
+			sourceTree = "<group>";
+		};
+		F729FEE22998A76600447DA8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F71B288029978B8B00DF297F /* ViewController.swift */,
+				F729FEE52998A7BC00447DA8 /* AddViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F729FEE32998A77000447DA8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F7BE364B2997A9F800F7F528 /* CustomTabBarVC.swift */,
+				F71B288229978B8B00DF297F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F729FEE42998A77E00447DA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +132,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F71B289029978B8C00DF297F /* Build configuration list for PBXNativeTarget "Budgetify" */;
 			buildPhases = (
+				1E074A9F119E31D308FED599 /* [CP] Check Pods Manifest.lock */,
 				F71B287529978B8B00DF297F /* Sources */,
 				F71B287629978B8B00DF297F /* Frameworks */,
 				F71B287729978B8B00DF297F /* Resources */,
+				9E973969F6677BA8E7D070F3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -139,6 +193,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1E074A9F119E31D308FED599 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Budgetify-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E973969F6677BA8E7D070F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Budgetify/Pods-Budgetify-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Budgetify/Pods-Budgetify-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Budgetify/Pods-Budgetify-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F71B287529978B8B00DF297F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -146,6 +242,7 @@
 			files = (
 				F7BE364C2997A9F800F7F528 /* CustomTabBarVC.swift in Sources */,
 				F71B288129978B8B00DF297F /* ViewController.swift in Sources */,
+				F729FEE62998A7BC00447DA8 /* AddViewController.swift in Sources */,
 				F71B288729978B8B00DF297F /* Budgetify.xcdatamodeld in Sources */,
 				F71B287D29978B8B00DF297F /* AppDelegate.swift in Sources */,
 				F71B287F29978B8B00DF297F /* SceneDelegate.swift in Sources */,
@@ -290,6 +387,7 @@
 		};
 		F71B289129978B8C00DF297F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12A99FFBB303E9E9D4C95E90 /* Pods-Budgetify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -318,6 +416,7 @@
 		};
 		F71B289229978B8C00DF297F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87AA54E5F2651B33E0BFB163 /* Pods-Budgetify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

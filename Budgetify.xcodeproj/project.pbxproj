@@ -14,6 +14,7 @@
 		F71B288729978B8B00DF297F /* Budgetify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F71B288529978B8B00DF297F /* Budgetify.xcdatamodeld */; };
 		F71B288929978B8C00DF297F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F71B288829978B8C00DF297F /* Assets.xcassets */; };
 		F71B288C29978B8C00DF297F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F71B288A29978B8C00DF297F /* LaunchScreen.storyboard */; };
+		F7BE364C2997A9F800F7F528 /* CustomTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE364B2997A9F800F7F528 /* CustomTabBarVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F71B288829978B8C00DF297F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F71B288B29978B8C00DF297F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F71B288D29978B8C00DF297F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7BE364B2997A9F800F7F528 /* CustomTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				F71B287C29978B8B00DF297F /* AppDelegate.swift */,
 				F71B287E29978B8B00DF297F /* SceneDelegate.swift */,
+				F7BE364B2997A9F800F7F528 /* CustomTabBarVC.swift */,
 				F71B288029978B8B00DF297F /* ViewController.swift */,
 				F71B288229978B8B00DF297F /* Main.storyboard */,
 				F71B288829978B8C00DF297F /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7BE364C2997A9F800F7F528 /* CustomTabBarVC.swift in Sources */,
 				F71B288129978B8B00DF297F /* ViewController.swift in Sources */,
 				F71B288729978B8B00DF297F /* Budgetify.xcdatamodeld in Sources */,
 				F71B287D29978B8B00DF297F /* AppDelegate.swift in Sources */,

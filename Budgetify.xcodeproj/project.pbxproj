@@ -10,11 +10,13 @@
 		8318EEA110A5DE1F1C9987DC /* Pods_Budgetify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FD80EF36619B420EB37565 /* Pods_Budgetify.framework */; };
 		F71B287D29978B8B00DF297F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B287C29978B8B00DF297F /* AppDelegate.swift */; };
 		F71B287F29978B8B00DF297F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B287E29978B8B00DF297F /* SceneDelegate.swift */; };
-		F71B288129978B8B00DF297F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B288029978B8B00DF297F /* ViewController.swift */; };
+		F71B288129978B8B00DF297F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B288029978B8B00DF297F /* HomeViewController.swift */; };
 		F71B288429978B8B00DF297F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F71B288229978B8B00DF297F /* Main.storyboard */; };
 		F71B288729978B8B00DF297F /* Budgetify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F71B288529978B8B00DF297F /* Budgetify.xcdatamodeld */; };
 		F71B288929978B8C00DF297F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F71B288829978B8C00DF297F /* Assets.xcassets */; };
 		F71B288C29978B8C00DF297F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F71B288A29978B8C00DF297F /* LaunchScreen.storyboard */; };
+		F72056F4299A20F9004D87CE /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72056F2299A20F9004D87CE /* TransactionTableViewCell.swift */; };
+		F72056F5299A20F9004D87CE /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72056F3299A20F9004D87CE /* TransactionTableViewCell.xib */; };
 		F729FEE62998A7BC00447DA8 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F729FEE52998A7BC00447DA8 /* AddViewController.swift */; };
 		F7BE364C2997A9F800F7F528 /* CustomTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE364B2997A9F800F7F528 /* CustomTabBarVC.swift */; };
 /* End PBXBuildFile section */
@@ -26,12 +28,14 @@
 		F71B287929978B8B00DF297F /* Budgetify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budgetify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F71B287C29978B8B00DF297F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F71B287E29978B8B00DF297F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F71B288029978B8B00DF297F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F71B288029978B8B00DF297F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F71B288329978B8B00DF297F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F71B288629978B8B00DF297F /* Budgetify.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Budgetify.xcdatamodel; sourceTree = "<group>"; };
 		F71B288829978B8C00DF297F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F71B288B29978B8C00DF297F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F71B288D29978B8C00DF297F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F72056F2299A20F9004D87CE /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		F72056F3299A20F9004D87CE /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
 		F729FEE52998A7BC00447DA8 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		F7BE364B2997A9F800F7F528 /* CustomTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,7 +66,6 @@
 				12A99FFBB303E9E9D4C95E90 /* Pods-Budgetify.debug.xcconfig */,
 				87AA54E5F2651B33E0BFB163 /* Pods-Budgetify.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -95,7 +98,6 @@
 				F71B288829978B8C00DF297F /* Assets.xcassets */,
 				F71B288A29978B8C00DF297F /* LaunchScreen.storyboard */,
 				F71B288D29978B8C00DF297F /* Info.plist */,
-				F71B288529978B8B00DF297F /* Budgetify.xcdatamodeld */,
 			);
 			path = Budgetify;
 			sourceTree = "<group>";
@@ -103,7 +105,7 @@
 		F729FEE22998A76600447DA8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F71B288029978B8B00DF297F /* ViewController.swift */,
+				F71B288029978B8B00DF297F /* HomeViewController.swift */,
 				F729FEE52998A7BC00447DA8 /* AddViewController.swift */,
 			);
 			path = Controller;
@@ -114,6 +116,8 @@
 			children = (
 				F7BE364B2997A9F800F7F528 /* CustomTabBarVC.swift */,
 				F71B288229978B8B00DF297F /* Main.storyboard */,
+				F72056F2299A20F9004D87CE /* TransactionTableViewCell.swift */,
+				F72056F3299A20F9004D87CE /* TransactionTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -121,6 +125,7 @@
 		F729FEE42998A77E00447DA8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F71B288529978B8B00DF297F /* Budgetify.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 			files = (
 				F71B288C29978B8C00DF297F /* LaunchScreen.storyboard in Resources */,
 				F71B288929978B8C00DF297F /* Assets.xcassets in Resources */,
+				F72056F5299A20F9004D87CE /* TransactionTableViewCell.xib in Resources */,
 				F71B288429978B8B00DF297F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,7 +247,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7BE364C2997A9F800F7F528 /* CustomTabBarVC.swift in Sources */,
-				F71B288129978B8B00DF297F /* ViewController.swift in Sources */,
+				F72056F4299A20F9004D87CE /* TransactionTableViewCell.swift in Sources */,
+				F71B288129978B8B00DF297F /* HomeViewController.swift in Sources */,
 				F729FEE62998A7BC00447DA8 /* AddViewController.swift in Sources */,
 				F71B288729978B8B00DF297F /* Budgetify.xcdatamodeld in Sources */,
 				F71B287D29978B8B00DF297F /* AppDelegate.swift in Sources */,

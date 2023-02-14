@@ -12,8 +12,14 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var walletCardView: UIView!
     @IBOutlet weak var transactionTableView: UITableView!
+    @IBOutlet weak var totalBalanceLabel: UILabel!
+    @IBOutlet weak var incomeLabel: UILabel!
+    @IBOutlet weak var expenseLabel: UILabel!
     
     var transactionList = [Transaction]()
+    var totalBalance: Float = 0.0
+    var totalIncome: Float = 0.0
+    var totalExpense: Float = 0.0
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -28,10 +34,15 @@ class HomeViewController: UIViewController {
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
         loadTransactionList()
+        calculateTotalBalance()
         
         //register cell
         let cellNib = UINib(nibName: "TransactionTableViewCell", bundle: nil)
         transactionTableView.register(cellNib, forCellReuseIdentifier: "TransactionTableViewCell")
+        
+        totalBalanceLabel.text = "$ "+String(totalBalance)
+        incomeLabel.text = "$ "+String(totalIncome)
+        expenseLabel.text = "$ "+String(totalExpense)
     }
 }
 
@@ -56,5 +67,18 @@ extension HomeViewController {
         }
         transactionTableView.reloadData()
     }
+    
+    func calculateTotalBalance() {
+        for transaction in transactionList {
+            if transaction.type == "Income" {
+                totalIncome += Float(transaction.amount!)!
+            } else {
+                totalExpense += Float(transaction.amount!)!
+            }
+        }
+        totalBalance += totalIncome
+        totalBalance -= totalExpense
+    }
+    
 }
 

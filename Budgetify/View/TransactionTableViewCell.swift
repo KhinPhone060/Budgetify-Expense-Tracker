@@ -27,7 +27,7 @@ class TransactionTableViewCell: UITableViewCell {
     
     func configCell(transaction: Transaction) {
         descLabel.text = transaction.transactionDescription
-        amountLabel.text = "\(currency) \(transaction.amount!) "
+        amountLabel.text = "\(currency) \(transaction.amount!)"
     }
     
 }

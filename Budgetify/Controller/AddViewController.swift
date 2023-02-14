@@ -18,8 +18,6 @@ class AddViewController: UIViewController {
     
     var transaction = [Transaction]()
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         typeDropdown.optionArray = ["Expense","Income"]
@@ -29,25 +27,23 @@ class AddViewController: UIViewController {
         containerView.layer.shadowColor = UIColor.black.cgColor
         containerView.layer.shadowOpacity = 0.1
         containerView.layer.shadowOffset = CGSize(width: 4, height: 4)
-
-        //self.hidesBottomBarWhenPushed = true
     }
     
     @IBAction func continuePressed(_ sender: UIButton) {
-        let newTransaction = Transaction(context: context)
-        newTransaction.type = typeDropdown.text
-        newTransaction.category = categoryDropdown.text!
-        newTransaction.amount = amountTextField.text!
-        newTransaction.transactionDescription = descriptionTextField.text!
         self.saveTransaction()
+        self.navigateBackToHome()
+    }
+    
+    @IBAction func backPressed(_ sender: UIButton) {
+        self.navigateBackToHome()
     }
     
     func saveTransaction() {
-        do{
-            try context.save()
-            print("Success")
-        } catch {
-            print("Error in saving context \(error)")
-        }
+        
+    }
+    
+    func navigateBackToHome() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "homeViewController")
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(vc!)
     }
 }

@@ -21,17 +21,13 @@ class HomeViewController: UIViewController {
     var totalIncome: Float = 0.0
     var totalExpense: Float = 0.0
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         walletCardView.layer.cornerRadius = 20
-        walletCardView.layer.shadowColor = UIColor.black.cgColor
-        walletCardView.layer.shadowOpacity = 0.1
-        walletCardView.layer.shadowOffset = CGSize(width: 4, height: 4)
-        
-        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        walletCardView.layer.shadowColor = UIColor(named: "BackgroundColor")?.cgColor
+        walletCardView.layer.shadowOpacity = 0.4
+        walletCardView.layer.shadowOffset = CGSize(width: 8, height: 8)
         
         loadTransactionList()
         calculateTotalBalance()
@@ -59,25 +55,20 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeViewController {
-    func loadTransactionList(with request: NSFetchRequest<Transaction> = Transaction.fetchRequest()) {
-        do {
-            transactionList = try context.fetch(request)
-        } catch {
-            print("Error in loading list \(error)")
-        }
-        transactionTableView.reloadData()
+    func loadTransactionList() {
+        
     }
     
     func calculateTotalBalance() {
-        for transaction in transactionList {
-            if transaction.type == "Income" {
-                totalIncome += Float(transaction.amount!)!
-            } else {
-                totalExpense += Float(transaction.amount!)!
-            }
-        }
-        totalBalance += totalIncome
-        totalBalance -= totalExpense
+//        for transaction in transactionList {
+//            if transaction.type == "Income" {
+//                totalIncome += Float(transaction.amount!)!
+//            } else {
+//                totalExpense += Float(transaction.amount!)!
+//            }
+//        }
+//        totalBalance += totalIncome
+//        totalBalance -= totalExpense
     }
     
 }

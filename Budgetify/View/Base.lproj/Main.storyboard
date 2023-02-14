@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 38" translatesAutoresizingMaskIntoConstraints="NO" id="Ha4-6c-bji">
-                                <rect key="frame" x="0.0" y="1" width="414" height="287"/>
+                                <rect key="frame" x="0.0" y="-12" width="414" height="287"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have a nice day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l56-Mk-cRb">
                                 <rect key="frame" x="16" y="86" width="115" height="19"/>
@@ -134,10 +135,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l56-Mk-cRb" secondAttribute="trailing" constant="20" id="mio-89-Ssh"/>
                             <constraint firstItem="KGp-Ph-oyy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="pAa-5f-xuZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EV1-hw-rJE" secondAttribute="trailing" constant="16" id="r7Y-Bs-vFq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="Ha4-6c-bji" secondAttribute="top" constant="47" id="wED-9O-5Nl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="Ha4-6c-bji" secondAttribute="top" constant="60" id="wED-9O-5Nl"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="home 1" selectedImage="home-f 1" id="b6l-2j-eMR"/>
+                    <tabBarItem key="tabBarItem" title="" image="home 1" selectedImage="home-f 1" id="PCL-n6-UD1"/>
+                    <navigationItem key="navigationItem" id="347-9I-i58"/>
                     <connections>
                         <outlet property="expenseLabel" destination="OXH-t8-5kN" id="htN-o7-BEX"/>
                         <outlet property="incomeLabel" destination="HON-7I-pDP" id="NVQ-vK-2HJ"/>
@@ -148,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1052.1739130434783" y="1076.7857142857142"/>
+            <point key="canvasLocation" x="-935" y="1038"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="hzT-pt-v3B">
@@ -159,10 +161,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 38" translatesAutoresizingMaskIntoConstraints="NO" id="bFd-LM-Bb9">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="287"/>
+                                <rect key="frame" x="0.0" y="-12" width="414" height="287"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4BW-eK-4Wa">
+                                <rect key="frame" x="20" y="37" width="42.5" height="40.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="default" variableValue="1"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font" weight="black">
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                    </preferredSymbolConfiguration>
+                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="backPressed:" destination="1Tr-CR-BJ7" eventType="touchUpInside" id="jLh-rE-pjM"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ydv-qw-9BR">
-                                <rect key="frame" x="28" y="166" width="358" height="522"/>
+                                <rect key="frame" x="28" y="127.5" width="358" height="560.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65f-Qc-3Ez">
                                         <rect key="frame" x="20" y="33" width="36" height="20"/>
@@ -275,23 +291,35 @@
                                     <action selector="continuePressed:" destination="1Tr-CR-BJ7" eventType="touchUpInside" id="Sa9-ka-IOO"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Transaction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3v-Mm-jRE">
+                                <rect key="frame" x="122.5" y="37" width="156" height="40.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="0.98999999999999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iAv-OJ-Ivp"/>
                         <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="4BW-eK-4Wa" firstAttribute="leading" secondItem="iAv-OJ-Ivp" secondAttribute="leading" constant="20" id="2Ra-ac-fF6"/>
+                            <constraint firstItem="bFd-LM-Bb9" firstAttribute="top" secondItem="iAv-OJ-Ivp" secondAttribute="top" constant="-60" id="2jh-I2-er5"/>
+                            <constraint firstItem="Ydv-qw-9BR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4BW-eK-4Wa" secondAttribute="bottom" constant="50" id="4XT-15-uNF"/>
                             <constraint firstItem="iAv-OJ-Ivp" firstAttribute="bottom" secondItem="vKm-9i-kvX" secondAttribute="bottom" constant="30" id="5wz-DR-wlP"/>
                             <constraint firstItem="iAv-OJ-Ivp" firstAttribute="trailing" secondItem="bFd-LM-Bb9" secondAttribute="trailing" id="E2X-0f-cuS"/>
                             <constraint firstItem="bFd-LM-Bb9" firstAttribute="leading" secondItem="iAv-OJ-Ivp" secondAttribute="leading" id="NCv-d8-wVk"/>
-                            <constraint firstItem="iAv-OJ-Ivp" firstAttribute="top" secondItem="bFd-LM-Bb9" secondAttribute="top" constant="48" id="NIG-LX-gB5"/>
                             <constraint firstItem="vKm-9i-kvX" firstAttribute="leading" secondItem="iAv-OJ-Ivp" secondAttribute="leading" constant="28" id="PU2-Eh-F4S"/>
-                            <constraint firstItem="Ydv-qw-9BR" firstAttribute="top" secondItem="iAv-OJ-Ivp" secondAttribute="top" constant="118" id="RkS-Nf-hyA"/>
+                            <constraint firstItem="iAv-OJ-Ivp" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="b3v-Mm-jRE" secondAttribute="trailing" constant="30" id="TDJ-KC-hv4"/>
                             <constraint firstItem="Ydv-qw-9BR" firstAttribute="leading" secondItem="iAv-OJ-Ivp" secondAttribute="leading" constant="28" id="UQc-eG-6PI"/>
+                            <constraint firstItem="b3v-Mm-jRE" firstAttribute="leading" secondItem="4BW-eK-4Wa" secondAttribute="trailing" constant="60" id="Uxc-Au-YKR"/>
                             <constraint firstItem="iAv-OJ-Ivp" firstAttribute="trailing" secondItem="Ydv-qw-9BR" secondAttribute="trailing" constant="28" id="VVQ-ua-Osh"/>
+                            <constraint firstItem="Ydv-qw-9BR" firstAttribute="top" secondItem="b3v-Mm-jRE" secondAttribute="bottom" constant="50" id="aR6-Ah-gnJ"/>
                             <constraint firstItem="vKm-9i-kvX" firstAttribute="top" secondItem="Ydv-qw-9BR" secondAttribute="bottom" constant="40" id="bCX-y6-cyN"/>
+                            <constraint firstItem="4BW-eK-4Wa" firstAttribute="top" secondItem="bFd-LM-Bb9" secondAttribute="top" constant="49" id="dEY-Hu-OrR"/>
                             <constraint firstItem="iAv-OJ-Ivp" firstAttribute="trailing" secondItem="vKm-9i-kvX" secondAttribute="trailing" constant="28" id="e5c-It-dJQ"/>
+                            <constraint firstItem="b3v-Mm-jRE" firstAttribute="top" secondItem="bFd-LM-Bb9" secondAttribute="top" constant="49" id="rkx-wx-USo"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="nhu-pD-BNY"/>
+                    <tabBarItem key="tabBarItem" title="" id="YL2-jh-iho"/>
                     <connections>
                         <outlet property="amountTextField" destination="3Vd-FA-mqg" id="heq-lV-CBC"/>
                         <outlet property="categoryDropdown" destination="gPg-EG-RVz" id="sKC-ul-Htt"/>
@@ -302,7 +330,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xOV-zd-bK5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-23.188405797101453" y="1077.4553571428571"/>
+            <point key="canvasLocation" x="-120.28985507246378" y="1037.9464285714284"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FVA-QD-A0o">
@@ -318,12 +346,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0M-Jb-NBh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1028" y="1078"/>
+            <point key="canvasLocation" x="723" y="1038"/>
         </scene>
         <!--Custom Tab BarVC-->
         <scene sceneID="Yhq-ph-ceI">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="c9E-DU-NAD" customClass="CustomTabBarVC" customModule="Budgetify" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="homeViewController" automaticallyAdjustsScrollViewInsets="NO" id="c9E-DU-NAD" customClass="CustomTabBarVC" customModule="Budgetify" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="viz-Bt-AZG">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -332,8 +360,8 @@
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="J4g-f4-bcQ"/>
-                        <segue destination="1Tr-CR-BJ7" kind="relationship" relationship="viewControllers" id="S5A-OG-CTQ"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="57u-cP-7DH"/>
+                        <segue destination="1Tr-CR-BJ7" kind="relationship" relationship="viewControllers" id="v8K-hU-Eyt"/>
                         <segue destination="kT4-Sx-yvq" kind="relationship" relationship="viewControllers" id="sVP-JO-qSH"/>
                     </connections>
                 </tabBarController>
@@ -348,6 +376,7 @@
         <image name="Group 38" width="414" height="287"/>
         <image name="bar-chart 1" width="34" height="34"/>
         <image name="bar-chart-fill 1" width="35" height="34"/>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="home 1" width="35" height="36"/>
         <image name="home-f 1" width="36" height="36"/>
         <namedColor name="AccentColor">

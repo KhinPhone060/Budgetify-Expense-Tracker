@@ -10,6 +10,7 @@
 		8318EEA110A5DE1F1C9987DC /* Pods_Budgetify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FD80EF36619B420EB37565 /* Pods_Budgetify.framework */; };
 		F7010F39299BB326002F318F /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7010F38299BB326002F318F /* Transaction.swift */; };
 		F7010F3B299BBD73002F318F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7010F3A299BBD73002F318F /* GoogleService-Info.plist */; };
+		F7010F3D299BC1C9002F318F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7010F3C299BC1C9002F318F /* Constants.swift */; };
 		F71B287D29978B8B00DF297F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B287C29978B8B00DF297F /* AppDelegate.swift */; };
 		F71B287F29978B8B00DF297F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B287E29978B8B00DF297F /* SceneDelegate.swift */; };
 		F71B288129978B8B00DF297F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71B288029978B8B00DF297F /* HomeViewController.swift */; };
@@ -28,6 +29,7 @@
 		87AA54E5F2651B33E0BFB163 /* Pods-Budgetify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Budgetify.release.xcconfig"; path = "Target Support Files/Pods-Budgetify/Pods-Budgetify.release.xcconfig"; sourceTree = "<group>"; };
 		F7010F38299BB326002F318F /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		F7010F3A299BBD73002F318F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F7010F3C299BC1C9002F318F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F71B287929978B8B00DF297F /* Budgetify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Budgetify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F71B287C29978B8B00DF297F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F71B287E29978B8B00DF297F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				F71B288A29978B8C00DF297F /* LaunchScreen.storyboard */,
 				F7010F3A299BBD73002F318F /* GoogleService-Info.plist */,
 				F71B288D29978B8C00DF297F /* Info.plist */,
+				F7010F3C299BC1C9002F318F /* Constants.swift */,
 			);
 			path = Budgetify;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				F729FEE62998A7BC00447DA8 /* AddViewController.swift in Sources */,
 				F71B287D29978B8B00DF297F /* AppDelegate.swift in Sources */,
 				F71B287F29978B8B00DF297F /* SceneDelegate.swift in Sources */,
+				F7010F3D299BC1C9002F318F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

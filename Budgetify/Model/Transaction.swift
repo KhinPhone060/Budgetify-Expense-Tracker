@@ -10,7 +10,6 @@ import Foundation
 struct Transaction {
     let type: String?
     let category: String?
-    let amount: Float?
+    let amount: String?
     let description: String?
-    let date: String?
 }

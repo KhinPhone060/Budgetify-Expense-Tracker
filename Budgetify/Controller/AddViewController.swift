@@ -7,6 +7,7 @@
 
 import UIKit
 import iOSDropDown
+import FirebaseFirestore
 
 class AddViewController: UIViewController {
     
@@ -17,6 +18,8 @@ class AddViewController: UIViewController {
     @IBOutlet weak var descriptionTextField: UITextField!
     
     var transaction = [Transaction]()
+    
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,16 +33,31 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func continuePressed(_ sender: UIButton) {
-        self.saveTransaction()
+        if let transactionType = typeDropdown.text,
+           let category = categoryDropdown.text,
+           let amount = amountTextField.text,
+           let description = descriptionTextField.text
+        {
+            db.collection("transaction")
+                .addDocument(data: [
+                    Constants.Fstore.transactionType: transactionType,
+                    Constants.Fstore.category: category,
+                    Constants.Fstore.amount: amount,
+                    Constants.Fstore.description: description,
+                    Constants.Fstore.date: Date().timeIntervalSince1970
+                ]){ (error) in
+                    if let e = error {
+                        print("There was an issue saving data to the firestore, \(e)")
+                    } else{
+                        print("Successfully saved data")
+                    }
+                }
+        }
         self.navigateBackToHome()
     }
     
     @IBAction func backPressed(_ sender: UIButton) {
         self.navigateBackToHome()
-    }
-    
-    func saveTransaction() {
-        
     }
     
     func navigateBackToHome() {

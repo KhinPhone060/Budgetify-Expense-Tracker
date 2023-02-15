@@ -63,6 +63,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="amountLabel" destination="42Q-XW-Ccp" id="K4i-CS-9Qr"/>
+                <outlet property="dateLabel" destination="u9a-Zf-8NK" id="JO8-3w-Et1"/>
                 <outlet property="descLabel" destination="evA-Bt-qvv" id="DKz-Fs-g5s"/>
             </connections>
             <point key="canvasLocation" x="116.92307692307692" y="20.616113744075829"/>

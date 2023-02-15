@@ -98,8 +98,11 @@ extension HomeViewController {
                     if let snapshotDocuments = querySnapshot?.documents {
                         for doc in snapshotDocuments {
                             let data = doc.data()
-                            var income = Float(data["amount"] as! String)
+                            let income = Float(data["amount"] as! String)
                             
+                            guard income != nil else {
+                                return
+                            }
                             self.totalIncome += income!
                         }
                         self.totalBalance += self.totalIncome
@@ -125,9 +128,12 @@ extension HomeViewController {
                     if let snapshotDocuments = querySnapshot?.documents {
                         for doc in snapshotDocuments {
                             let data = doc.data()
-                            var income = Float(data["amount"] as! String)
+                            let expense = Float(data["amount"] as! String)
                             
-                            self.totalExpense += income!
+                            guard expense != nil else {
+                                return
+                            }
+                            self.totalExpense += expense!
                         }
                         self.totalBalance -= self.totalExpense
                         

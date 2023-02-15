@@ -8,6 +8,7 @@
 import UIKit
 import iOSDropDown
 import FirebaseFirestore
+import UITextField_Shake_Swift_
 
 class AddViewController: UIViewController {
     
@@ -30,30 +31,42 @@ class AddViewController: UIViewController {
         containerView.layer.shadowColor = UIColor.black.cgColor
         containerView.layer.shadowOpacity = 0.1
         containerView.layer.shadowOffset = CGSize(width: 4, height: 4)
+        
+        self.hideKeyboardWhenTappedAround() 
     }
     
     @IBAction func continuePressed(_ sender: UIButton) {
-        if let transactionType = typeDropdown.text,
-           let category = categoryDropdown.text,
-           let amount = amountTextField.text,
-           let description = descriptionTextField.text
-        {
-            db.collection("transaction")
-                .addDocument(data: [
-                    Constants.Fstore.transactionType: transactionType,
-                    Constants.Fstore.category: category,
-                    Constants.Fstore.amount: amount,
-                    Constants.Fstore.description: description,
-                    Constants.Fstore.date: Date().timeIntervalSince1970
-                ]){ (error) in
-                    if let e = error {
-                        print("There was an issue saving data to the firestore, \(e)")
-                    } else{
-                        print("Successfully saved data")
+        
+        if categoryDropdown.text == "" {
+            categoryDropdown.shake(times: 10, delta: 5, speed: 0.05)
+        } else if amountTextField.text == "" {
+            amountTextField.shake(times: 10, delta: 5, speed: 0.05)
+        } else if descriptionTextField.text == "" {
+            descriptionTextField.shake(times: 10, delta: 5, speed: 0.05)
+        } else {
+            
+            if let transactionType = typeDropdown.text,
+               let category = categoryDropdown.text,
+               let amount = amountTextField.text,
+               let description = descriptionTextField.text
+            {
+                db.collection("transaction")
+                    .addDocument(data: [
+                        Constants.Fstore.transactionType: transactionType,
+                        Constants.Fstore.category: category,
+                        Constants.Fstore.amount: amount,
+                        Constants.Fstore.description: description,
+                        Constants.Fstore.date: Date().timeIntervalSince1970
+                    ]){ (error) in
+                        if let e = error {
+                            print("There was an issue saving data to the firestore, \(e)")
+                        } else{
+                            print("Successfully saved data")
+                        }
                     }
-                }
+            }
+            self.navigateBackToHome()
         }
-        self.navigateBackToHome()
     }
     
     @IBAction func backPressed(_ sender: UIButton) {

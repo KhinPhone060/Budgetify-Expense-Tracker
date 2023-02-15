@@ -11,6 +11,7 @@ class TransactionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     let currency = "$"
     
@@ -27,7 +28,13 @@ class TransactionTableViewCell: UITableViewCell {
     
     func configCell(transaction: Transaction) {
         descLabel.text = transaction.description
-        amountLabel.text = "\(currency) \(transaction.amount!)"
+        
+        if transaction.type == "Income" {
+            amountLabel.text = "+ \(currency) \(transaction.amount!)"
+        } else {
+            amountLabel.text = "- \(currency) \(transaction.amount!)"
+            amountLabel.textColor = UIColor.red
+        }
     }
     
 }

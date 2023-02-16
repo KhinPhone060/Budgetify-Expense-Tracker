@@ -77,13 +77,16 @@ extension HomeViewController {
                             if let amount = data["amount"] as? String,
                                let category = data["category"] as? String,
                                let description = data["description"] as? String,
-                               let type = data["type"] as? String
+                               let type = data["type"] as? String,
+                               let user = data[Constants.Fstore.user] as? String
                             {
-                                let newTransaction = Transaction(type: type, category: category, amount: amount, description: description)
-                                self.transactionList.append(newTransaction)
-                                
-                                DispatchQueue.main.async {
-                                    self.transactionTableView.reloadData()
+                                if Auth.auth().currentUser?.email == user {
+                                    let newTransaction = Transaction(type: type, category: category, amount: amount, description: description)
+                                    self.transactionList.append(newTransaction)
+                                    
+                                    DispatchQueue.main.async {
+                                        self.transactionTableView.reloadData()
+                                    }
                                 }
                             }
                         }
@@ -102,15 +105,20 @@ extension HomeViewController {
                     if let snapshotDocuments = querySnapshot?.documents {
                         for doc in snapshotDocuments {
                             let data = doc.data()
-                            let income = Float(data["amount"] as! String)
                             
-                            guard income != nil else {
-                                return
+                            if let user = data["user"] as? String {
+                                if Auth.auth().currentUser?.email == user {
+                                    let income = Float(data["amount"] as! String)
+                                    
+                                    guard income != nil else {
+                                        return
+                                    }
+                                    self.totalIncome += income!
+                                }
                             }
-                            self.totalIncome += income!
                         }
                         self.totalBalance += self.totalIncome
-                        
+
                         DispatchQueue.main.async {
                             self.totalBalanceLabel.text = "$ "+String(self.totalBalance)
                             self.incomeLabel.text = "$ "+String(self.totalIncome)
@@ -132,12 +140,17 @@ extension HomeViewController {
                     if let snapshotDocuments = querySnapshot?.documents {
                         for doc in snapshotDocuments {
                             let data = doc.data()
-                            let expense = Float(data["amount"] as! String)
                             
-                            guard expense != nil else {
-                                return
+                            if let user = data["user"] as? String {
+                                if Auth.auth().currentUser?.email == user {
+                                    let expense = Float(data["amount"] as! String)
+                                    
+                                    guard expense != nil else {
+                                        return
+                                    }
+                                    self.totalExpense += expense!
+                                }
                             }
-                            self.totalExpense += expense!
                         }
                         self.totalBalance -= self.totalExpense
                         

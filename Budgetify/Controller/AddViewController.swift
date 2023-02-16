@@ -9,6 +9,7 @@ import UIKit
 import iOSDropDown
 import FirebaseFirestore
 import UITextField_Shake_Swift_
+import FirebaseAuth
 
 class AddViewController: UIViewController {
     
@@ -48,10 +49,12 @@ class AddViewController: UIViewController {
             if let transactionType = typeDropdown.text,
                let category = categoryDropdown.text,
                let amount = amountTextField.text,
-               let description = descriptionTextField.text
+               let description = descriptionTextField.text,
+               let user = Auth.auth().currentUser?.email
             {
                 db.collection("transaction")
                     .addDocument(data: [
+                        Constants.Fstore.user: user,
                         Constants.Fstore.transactionType: transactionType,
                         Constants.Fstore.category: category,
                         Constants.Fstore.amount: amount,

@@ -10,6 +10,7 @@ import Foundation
 struct Constants {
     
     struct Fstore {
+        static let user = "user"
         static let transactionType = "type"
         static let category = "category"
         static let amount = "amount"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ixy-Cu-5Tw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c9E-DU-NAD">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -433,15 +433,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="     Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gDf-yO-Mw3">
-                                <rect key="frame" x="20" y="183" width="390" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="fbW-je-ayH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next" textContentType="name"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="     Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5t2-iB-fQJ">
                                 <rect key="frame" x="20" y="273" width="390" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -485,8 +476,7 @@
                         <viewLayoutGuide key="safeArea" id="3fF-bf-bKt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gDf-yO-Mw3" firstAttribute="leading" secondItem="3fF-bf-bKt" secondAttribute="leading" constant="20" id="8uG-T2-4An"/>
-                            <constraint firstItem="gDf-yO-Mw3" firstAttribute="top" secondItem="3fF-bf-bKt" secondAttribute="top" constant="80" id="GKo-9o-RZI"/>
+                            <constraint firstItem="5t2-iB-fQJ" firstAttribute="top" secondItem="3fF-bf-bKt" secondAttribute="top" constant="170" id="6MX-dX-AKp"/>
                             <constraint firstItem="3fF-bf-bKt" firstAttribute="trailing" secondItem="AtJ-sT-Z23" secondAttribute="trailing" constant="20" id="NKh-5Z-yoa"/>
                             <constraint firstItem="AtJ-sT-Z23" firstAttribute="leading" secondItem="3fF-bf-bKt" secondAttribute="leading" constant="20" id="Wb6-wU-QL0"/>
                             <constraint firstItem="3fF-bf-bKt" firstAttribute="trailing" secondItem="Y47-RW-tNC" secondAttribute="trailing" constant="50" id="XXa-as-aTi"/>
@@ -495,10 +485,8 @@
                             <constraint firstItem="5t2-iB-fQJ" firstAttribute="leading" secondItem="3fF-bf-bKt" secondAttribute="leading" constant="20" id="pBA-35-MRb"/>
                             <constraint firstItem="3fF-bf-bKt" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Y47-RW-tNC" secondAttribute="bottom" constant="100" id="piZ-7h-4zU"/>
                             <constraint firstItem="3fF-bf-bKt" firstAttribute="trailing" secondItem="5t2-iB-fQJ" secondAttribute="trailing" constant="20" id="qbq-I4-N6U"/>
-                            <constraint firstItem="3fF-bf-bKt" firstAttribute="trailing" secondItem="gDf-yO-Mw3" secondAttribute="trailing" constant="20" id="qog-VL-QwK"/>
                             <constraint firstItem="5hw-Jm-IR0" firstAttribute="leading" secondItem="3fF-bf-bKt" secondAttribute="leading" constant="16" id="rML-fI-Oin"/>
                             <constraint firstItem="3fF-bf-bKt" firstAttribute="trailing" secondItem="5hw-Jm-IR0" secondAttribute="trailing" constant="16" id="tHU-2l-kIM"/>
-                            <constraint firstItem="5t2-iB-fQJ" firstAttribute="top" secondItem="gDf-yO-Mw3" secondAttribute="bottom" constant="40" id="uq3-rb-yrT"/>
                             <constraint firstItem="Y47-RW-tNC" firstAttribute="top" secondItem="5hw-Jm-IR0" secondAttribute="bottom" constant="8" id="vPQ-6E-yoR"/>
                             <constraint firstItem="Y47-RW-tNC" firstAttribute="leading" secondItem="3fF-bf-bKt" secondAttribute="leading" constant="50" id="xYF-Wy-jff"/>
                         </constraints>
@@ -506,7 +494,6 @@
                     <navigationItem key="navigationItem" title="Sign Up" largeTitleDisplayMode="always" id="3RA-yH-VYG"/>
                     <connections>
                         <outlet property="emailTextField" destination="5t2-iB-fQJ" id="5sY-6R-P03"/>
-                        <outlet property="nameTextField" destination="gDf-yO-Mw3" id="zdx-OZ-ebm"/>
                         <outlet property="passwordTextField" destination="AtJ-sT-Z23" id="bGe-IZ-8sT"/>
                     </connections>
                 </viewController>
@@ -539,7 +526,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Udf-sf-rC6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ixy-Cu-5Tw" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="signUpViewController" automaticallyAdjustsScrollViewInsets="NO" id="Ixy-Cu-5Tw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KpX-yo-vTV">
                         <rect key="frame" x="0.0" y="59" width="430" height="44"/>

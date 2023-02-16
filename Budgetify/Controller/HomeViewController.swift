@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
     
@@ -27,19 +28,22 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadTransactionList()
-        loadTotalIncome()
-        loadTotalExpense()
-        
-        walletCardView.layer.cornerRadius = 20
-        walletCardView.layer.shadowColor = UIColor(named: "BackgroundColor")?.cgColor
-        walletCardView.layer.shadowOpacity = 0.4
-        walletCardView.layer.shadowOffset = CGSize(width: 8, height: 8)
-        
-        //register cell
-        let cellNib = UINib(nibName: "TransactionTableViewCell", bundle: nil)
-        transactionTableView.register(cellNib, forCellReuseIdentifier: "TransactionTableViewCell")
-        
+        if Auth.auth().currentUser?.uid == nil {
+            self.navigateToSignUp()
+        } else {
+            loadTransactionList()
+            loadTotalIncome()
+            loadTotalExpense()
+            
+            walletCardView.layer.cornerRadius = 20
+            walletCardView.layer.shadowColor = UIColor(named: "BackgroundColor")?.cgColor
+            walletCardView.layer.shadowOpacity = 0.4
+            walletCardView.layer.shadowOffset = CGSize(width: 8, height: 8)
+            
+            //register cell
+            let cellNib = UINib(nibName: "TransactionTableViewCell", bundle: nil)
+            transactionTableView.register(cellNib, forCellReuseIdentifier: "TransactionTableViewCell")
+        }
     }
 }
 

@@ -72,9 +72,4 @@ class AddViewController: UIViewController {
     @IBAction func backPressed(_ sender: UIButton) {
         self.navigateBackToHome()
     }
-    
-    func navigateBackToHome() {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "homeViewController")
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(vc!)
-    }
 }

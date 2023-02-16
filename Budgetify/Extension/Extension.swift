@@ -17,4 +17,14 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    func navigateBackToHome() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "homeViewController")
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(vc!)
+    }
+    
+    func navigateToSignUp() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "signUpViewController")
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(vc!)
+    }
 }

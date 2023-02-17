@@ -34,6 +34,7 @@ class TransactionTableViewCell: UITableViewCell {
         } else {
             amountLabel.text = "- \(currency) \(transaction.amount!)"
             amountLabel.textColor = UIColor.red
+            dateLabel.text = transaction.date
         }
     }
     

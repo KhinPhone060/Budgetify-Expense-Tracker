@@ -15,6 +15,7 @@ struct Constants {
         static let category = "category"
         static let amount = "amount"
         static let description = "description"
+        static let timeAdded = "timeAdded"
         static let date = "date"
     }
 }

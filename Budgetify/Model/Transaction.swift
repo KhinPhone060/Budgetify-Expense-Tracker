@@ -12,4 +12,5 @@ struct Transaction {
     let category: String?
     let amount: String?
     let description: String?
+    let date: String?
 }

@@ -37,6 +37,6 @@ class CustomTabBarVC: UITabBarController, UITabBarControllerDelegate {
         }
         
         @objc func menuButtonAction(sender: UIButton) {
-            self.selectedIndex = 1
+            self.selectedIndex = 2
         }
 }

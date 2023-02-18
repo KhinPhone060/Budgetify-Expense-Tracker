@@ -59,6 +59,10 @@ class AddViewController: UIViewController {
                let date = dateTextField.text,
                let user = Auth.auth().currentUser?.email
             {
+                let dateArr = date.split(separator: " ")
+                let month = dateArr[0]
+                let year = dateArr[2]
+                
                 db.collection("transaction")
                     .addDocument(data: [
                         Constants.Fstore.user: user,
@@ -67,6 +71,8 @@ class AddViewController: UIViewController {
                         Constants.Fstore.amount: amount,
                         Constants.Fstore.description: description,
                         Constants.Fstore.date: date,
+                        Constants.Fstore.month: month,
+                        Constants.Fstore.year: year,
                         Constants.Fstore.timeAdded: Date().timeIntervalSince1970
                     ]){ (error) in
                         if let e = error {

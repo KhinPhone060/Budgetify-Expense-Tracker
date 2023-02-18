@@ -350,7 +350,7 @@
             </objects>
             <point key="canvasLocation" x="-120" y="1037.7682403433478"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="G6H-57-HPn">
             <objects>
                 <viewController id="Kke-40-ixy" sceneMemberID="viewController">
@@ -360,16 +360,16 @@
                         <viewLayoutGuide key="safeArea" id="x0L-CX-Q5s"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="yTF-As-BM5"/>
+                    <tabBarItem key="tabBarItem" title="" image="person" catalog="system" selectedImage="person.fill" id="yTF-As-BM5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29r-fo-q5z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1556" y="1038"/>
         </scene>
-        <!--Statistic View Controller-->
+        <!--Wallet View Controller-->
         <scene sceneID="FVA-QD-A0o">
             <objects>
-                <viewController id="kT4-Sx-yvq" customClass="StatisticViewController" customModule="Budgetify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kT4-Sx-yvq" customClass="WalletViewController" customModule="Budgetify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sRO-Rv-z7g">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -388,45 +388,77 @@
                             <constraint firstItem="IiN-nd-c2u" firstAttribute="bottom" secondItem="srO-Gi-j8K" secondAttribute="bottom" constant="418" id="i1l-bo-vsR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="bar-chart 1" selectedImage="bar-chart-fill 1" id="LQr-zP-0AD"/>
+                    <tabBarItem key="tabBarItem" title="" image="wallet.pass" catalog="system" selectedImage="wallet.pass.fill" id="LQr-zP-0AD"/>
                     <connections>
-                        <outlet property="lineChartView" destination="srO-Gi-j8K" id="YEH-9y-fjr"/>
+                        <outlet property="lineChartView" destination="srO-Gi-j8K" id="Tts-8x-CoR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0M-Jb-NBh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-946" y="1038"/>
+            <point key="canvasLocation" x="721" y="1038"/>
         </scene>
-        <!--Item-->
+        <!--Statistic View Controller-->
         <scene sceneID="quC-1y-EG8">
             <objects>
-                <viewController id="Kcp-VP-UJx" customClass="WalletViewController" customModule="Budgetify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Kcp-VP-UJx" customClass="StatisticViewController" customModule="Budgetify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dBH-y1-4fj">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Financial Report" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LL-Yv-P9k">
+                                <rect key="frame" x="130" y="79" width="157" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IJO-3L-nWW" customClass="JRDropDown">
+                                <rect key="frame" x="20" y="116" width="32" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedRowColor">
+                                        <color key="value" name="SelectionColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSearchEnable" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="arrowSize">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="arrowColor">
+                                        <color key="value" name="BackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nib-WN-xbd" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="109" width="430" height="302"/>
+                                <rect key="frame" x="66" y="158" width="298" height="288"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="288" id="eT7-0g-Zk9"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TfF-1Q-qRF"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="nib-WN-xbd" firstAttribute="top" secondItem="TfF-1Q-qRF" secondAttribute="top" constant="50" id="MEJ-pF-Wf5"/>
-                            <constraint firstItem="nib-WN-xbd" firstAttribute="trailing" secondItem="TfF-1Q-qRF" secondAttribute="trailing" id="iaJ-Yr-N2c"/>
-                            <constraint firstItem="TfF-1Q-qRF" firstAttribute="bottom" secondItem="nib-WN-xbd" secondAttribute="bottom" constant="438" id="mR7-yU-C9f"/>
-                            <constraint firstItem="nib-WN-xbd" firstAttribute="leading" secondItem="TfF-1Q-qRF" secondAttribute="leading" id="uVv-9m-pzv"/>
+                            <constraint firstItem="nib-WN-xbd" firstAttribute="leading" secondItem="TfF-1Q-qRF" secondAttribute="leading" constant="66" id="4WB-wn-RHL"/>
+                            <constraint firstItem="5LL-Yv-P9k" firstAttribute="leading" secondItem="TfF-1Q-qRF" secondAttribute="leading" constant="130" id="9l1-vC-B6L"/>
+                            <constraint firstItem="IJO-3L-nWW" firstAttribute="leading" secondItem="TfF-1Q-qRF" secondAttribute="leading" constant="20" id="CXs-lk-vKB"/>
+                            <constraint firstItem="IJO-3L-nWW" firstAttribute="top" secondItem="TfF-1Q-qRF" secondAttribute="top" constant="57" id="EPn-dC-gmU"/>
+                            <constraint firstItem="TfF-1Q-qRF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5LL-Yv-P9k" secondAttribute="trailing" constant="20" id="bxx-vh-5Et"/>
+                            <constraint firstItem="TfF-1Q-qRF" firstAttribute="top" secondItem="5LL-Yv-P9k" secondAttribute="top" constant="-20" id="cWF-Lb-KKH"/>
+                            <constraint firstItem="nib-WN-xbd" firstAttribute="top" secondItem="5LL-Yv-P9k" secondAttribute="bottom" constant="55" id="gPd-We-Oav"/>
+                            <constraint firstItem="TfF-1Q-qRF" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="nib-WN-xbd" secondAttribute="bottom" constant="100" id="kGo-LB-0nc"/>
+                            <constraint firstItem="TfF-1Q-qRF" firstAttribute="trailing" secondItem="nib-WN-xbd" secondAttribute="trailing" constant="66" id="kYw-va-NN1"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Mqi-Q7-s37"/>
+                    <tabBarItem key="tabBarItem" title="" image="bar-chart 1" selectedImage="bar-chart-fill 1" id="Mqi-Q7-s37"/>
                     <connections>
-                        <outlet property="pieChartView" destination="nib-WN-xbd" id="LdU-jd-vag"/>
+                        <outlet property="monthDropDown" destination="IJO-3L-nWW" id="GmC-Sv-NA7"/>
+                        <outlet property="pieChartView" destination="nib-WN-xbd" id="0ng-gZ-Y98"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OB0-pY-HGq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="721" y="1038"/>
+            <point key="canvasLocation" x="-947.44186046511629" y="1037.7682403433478"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="E3K-e4-e5X">
@@ -595,9 +627,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="57u-cP-7DH"/>
-                        <segue destination="kT4-Sx-yvq" kind="relationship" relationship="viewControllers" id="sVP-JO-qSH"/>
-                        <segue destination="1Tr-CR-BJ7" kind="relationship" relationship="viewControllers" id="v8K-hU-Eyt"/>
                         <segue destination="Kcp-VP-UJx" kind="relationship" relationship="viewControllers" id="xwd-1A-27p"/>
+                        <segue destination="1Tr-CR-BJ7" kind="relationship" relationship="viewControllers" id="v8K-hU-Eyt"/>
+                        <segue destination="kT4-Sx-yvq" kind="relationship" relationship="viewControllers" id="e8B-4h-e4Y"/>
                         <segue destination="Kke-40-ixy" kind="relationship" relationship="viewControllers" id="UYc-HK-LzR"/>
                     </connections>
                 </tabBarController>
@@ -699,7 +731,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nan-gQ-nbm"/>
+        <segue reference="D7P-d1-sYt"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Coint" width="96" height="96"/>
@@ -715,8 +747,12 @@
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="home 1" width="35" height="36"/>
         <image name="home-f 1" width="36" height="36"/>
+        <image name="person" catalog="system" width="128" height="121"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="signInButton" width="358" height="64"/>
         <image name="signUpButton" width="358" height="64"/>
+        <image name="wallet.pass" catalog="system" width="115" height="128"/>
+        <image name="wallet.pass.fill" catalog="system" width="115" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.2630000114440918" green="0.53299999237060547" blue="0.51399999856948853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

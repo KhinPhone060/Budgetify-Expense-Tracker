@@ -22,7 +22,10 @@
 		F71B288C29978B8C00DF297F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F71B288A29978B8C00DF297F /* LaunchScreen.storyboard */; };
 		F72056F4299A20F9004D87CE /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72056F2299A20F9004D87CE /* TransactionTableViewCell.swift */; };
 		F72056F5299A20F9004D87CE /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72056F3299A20F9004D87CE /* TransactionTableViewCell.xib */; };
+		F7248EF829A1E300003B5EB5 /* statisticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7248EF629A1E300003B5EB5 /* statisticTableViewCell.swift */; };
+		F7248EF929A1E300003B5EB5 /* statisticTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7248EF729A1E300003B5EB5 /* statisticTableViewCell.xib */; };
 		F729FEE62998A7BC00447DA8 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F729FEE52998A7BC00447DA8 /* AddViewController.swift */; };
+		F72FA35829A3907C0058C8DB /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72FA35729A3907C0058C8DB /* Category.swift */; };
 		F771CCB9299EFD260088D9CE /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F771CCB8299EFD260088D9CE /* WalletViewController.swift */; };
 		F7773477299EE53F005B6DA8 /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7773476299EE53F005B6DA8 /* StatisticViewController.swift */; };
 		F7BE364C2997A9F800F7F528 /* CustomTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE364B2997A9F800F7F528 /* CustomTabBarVC.swift */; };
@@ -49,7 +52,10 @@
 		F71B288D29978B8C00DF297F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F72056F2299A20F9004D87CE /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		F72056F3299A20F9004D87CE /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
+		F7248EF629A1E300003B5EB5 /* statisticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = statisticTableViewCell.swift; sourceTree = "<group>"; };
+		F7248EF729A1E300003B5EB5 /* statisticTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = statisticTableViewCell.xib; sourceTree = "<group>"; };
 		F729FEE52998A7BC00447DA8 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		F72FA35729A3907C0058C8DB /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F771CCB8299EFD260088D9CE /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		F7773476299EE53F005B6DA8 /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		F7BE364B2997A9F800F7F528 /* CustomTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarVC.swift; sourceTree = "<group>"; };
@@ -150,6 +156,8 @@
 				F71B288229978B8B00DF297F /* Main.storyboard */,
 				F72056F2299A20F9004D87CE /* TransactionTableViewCell.swift */,
 				F72056F3299A20F9004D87CE /* TransactionTableViewCell.xib */,
+				F7248EF629A1E300003B5EB5 /* statisticTableViewCell.swift */,
+				F7248EF729A1E300003B5EB5 /* statisticTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -158,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				F7010F38299BB326002F318F /* Transaction.swift */,
+				F72FA35729A3907C0058C8DB /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -224,6 +233,7 @@
 			files = (
 				F71B288C29978B8C00DF297F /* LaunchScreen.storyboard in Resources */,
 				F71B288929978B8C00DF297F /* Assets.xcassets in Resources */,
+				F7248EF929A1E300003B5EB5 /* statisticTableViewCell.xib in Resources */,
 				F7010F3B299BBD73002F318F /* GoogleService-Info.plist in Resources */,
 				F72056F5299A20F9004D87CE /* TransactionTableViewCell.xib in Resources */,
 				F71B288429978B8B00DF297F /* Main.storyboard in Resources */,
@@ -286,8 +296,10 @@
 				F771CCB9299EFD260088D9CE /* WalletViewController.swift in Sources */,
 				F72056F4299A20F9004D87CE /* TransactionTableViewCell.swift in Sources */,
 				F7010F39299BB326002F318F /* Transaction.swift in Sources */,
+				F72FA35829A3907C0058C8DB /* Category.swift in Sources */,
 				F7D168C2299E050500C9C8E2 /* SignUpViewController.swift in Sources */,
 				F719C43B299F3A64004412CD /* NSUIColor+Hex.swift in Sources */,
+				F7248EF829A1E300003B5EB5 /* statisticTableViewCell.swift in Sources */,
 				F71B288129978B8B00DF297F /* HomeViewController.swift in Sources */,
 				F729FEE62998A7BC00447DA8 /* AddViewController.swift in Sources */,
 				F71B287D29978B8B00DF297F /* AppDelegate.swift in Sources */,

@@ -15,9 +15,11 @@ class StatisticViewController: UIViewController {
 
     @IBOutlet weak var pieChartView: PieChartView!
     @IBOutlet weak var monthDropDown: DropDown!
+    @IBOutlet weak var tableview: UITableView!
     
     let db = Firestore.firestore()
-    
+    var categoryList = [Category]()
+
     var bill:Double = 0.0
     var shopping: Double = 0.0
     var tax: Double = 0.0
@@ -28,6 +30,7 @@ class StatisticViewController: UIViewController {
     var lifeAndEntertainment:Double = 0.0
     var communicationAndPC:Double = 0.0
     var investment:Double = 0.0
+    var totalExpense: Double = 0.0
     
     var entries: [PieChartDataEntry] = Array()
     
@@ -52,6 +55,10 @@ class StatisticViewController: UIViewController {
         
         //load data
         loadMonthlyTransactionData()
+        
+        //register cell
+        let cellNib = UINib(nibName: "statisticTableViewCell", bundle: nil)
+        tableview.register(cellNib, forCellReuseIdentifier: "statisticTableViewCell")
     }
     
     func loadMonthlyTransactionData() {
@@ -64,11 +71,25 @@ class StatisticViewController: UIViewController {
                         print("there was error getting data \(e)")
                     } else if querySnapshot?.documents.count == 0 {
                         self.entries = []
+                        self.categoryList = []
                         let dataSet = PieChartDataSet(entries: self.entries, label: "")
                         self.pieChartView.data = PieChartData(dataSet: dataSet)
                         self.pieChartView.centerText = "No Chart Data"
+                        self.tableview.reloadData()
                     } else {
                         self.entries = []
+                        self.categoryList = []
+                        self.bill = 0.0
+                        self.shopping = 0.0
+                        self.tax = 0.0
+                        self.foodAndDrinks = 0.0
+                        self.housing = 0.0
+                        self.transportation = 0.0
+                        self.vehicle = 0.0
+                        self.lifeAndEntertainment = 0.0
+                        self.communicationAndPC = 0.0
+                        self.investment = 0.0
+                        self.totalExpense = 0.0
                         if let snapshotDocuments = querySnapshot?.documents {
                             for doc in snapshotDocuments {
                                 let data = doc.data()
@@ -103,6 +124,21 @@ class StatisticViewController: UIViewController {
                                     }
                                 }
                             }
+                            let newCategory1 = Category(name: "Bill",totalAmount: self.bill)
+                            let newCategory2 = Category(name: "Shopping",totalAmount: self.shopping)
+                            let newCategory3 = Category(name: "Tax",totalAmount: self.tax)
+                            let newCategory4 = Category(name: "Food & Drinks",totalAmount: self.foodAndDrinks)
+                            let newCategory5 = Category(name: "Housing",totalAmount: self.housing)
+                            let newCategory6 = Category(name: "Transportation",totalAmount: self.transportation)
+                            let newCategory7 = Category(name: "Vehicle",totalAmount: self.vehicle)
+                            let newCategory8 = Category(name: "Life & Entertainment",totalAmount: self.lifeAndEntertainment)
+                            let newCategory9 = Category(name: "Communication",totalAmount: self.communicationAndPC)
+                            let newCategory10 = Category(name: "Investment",totalAmount: self.investment)
+                            let newCategories = [newCategory1,newCategory2,newCategory3,newCategory4,newCategory5,newCategory6,newCategory7,newCategory8,newCategory9,newCategory10]
+                            
+                            self.categoryList.append(contentsOf: newCategories)
+                            
+                            self.totalExpense = self.bill+self.shopping+self.tax+self.foodAndDrinks+self.housing+self.transportation+self.vehicle+self.lifeAndEntertainment+self.communicationAndPC+self.investment
                             self.entries.append(PieChartDataEntry(value: self.bill, label: "Bill"))
                             self.entries.append(PieChartDataEntry(value: self.shopping, label: "Shopping"))
                             self.entries.append(PieChartDataEntry(value: self.tax, label: "Tax"))
@@ -116,12 +152,36 @@ class StatisticViewController: UIViewController {
                             
                             let dataSet = PieChartDataSet(entries: self.entries, label: "")
                             self.pieChartView.data = PieChartData(dataSet: dataSet)
-                            self.pieChartView.centerText = ""
-                            dataSet.colors = [NSUIColor(hex: 0xFDA97A),NSUIColor(hex: 0xFDEB7A),NSUIColor(hex: 0xCEFD7A),NSUIColor(hex: 0x8DFD7A),NSUIColor(hex: 0x7AFDA9),NSUIColor(hex: 0x7AFDEB),NSUIColor(hex: 0x7A7DFD),NSUIColor(hex: 0x7ABEFD),NSUIColor(hex: 0xFD7AC0),NSUIColor(hex: 0x4968D9)]
+                            self.pieChartView.centerText = "$ \(self.totalExpense)"
+                            dataSet.colors = [NSUIColor(hex: 0xFF0000),
+                                              NSUIColor(hex: 0xFF7200),
+                                              NSUIColor(hex: 0xFFAE00),
+                                              NSUIColor(hex: 0xFFEC00),
+                                              NSUIColor(hex: 0x2CCB75),
+                                              NSUIColor(hex: 0x5FB7D4),
+                                              NSUIColor(hex: 0x007ED6),
+                                              NSUIColor(hex: 0x8E6BEF),
+                                              NSUIColor(hex: 0x9C46D0),
+                                              NSUIColor(hex: 0xE01D84)]
                             dataSet.drawValuesEnabled = false
+                            self.tableview.reloadData()
                         }
                     }
                 }
         }
     }
+}
+
+extension StatisticViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return categoryList.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableview.dequeueReusableCell(withIdentifier: "statisticTableViewCell", for: indexPath) as! statisticTableViewCell
+        cell.configCell(category: categoryList[indexPath.row])
+        return cell
+    }
+
+
 }

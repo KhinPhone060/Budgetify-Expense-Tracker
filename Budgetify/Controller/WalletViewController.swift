@@ -1,5 +1,5 @@
 //
-//  WalletViewController.swift
+//  StatisticViewController.swift
 //  Budgetify
 //
 //  Created by Khin Phone Ei on 17/02/2023.
@@ -10,38 +10,41 @@ import Charts
 
 class WalletViewController: UIViewController {
 
-    @IBOutlet weak var pieChartView: PieChartView!
+    @IBOutlet weak var lineChartView: LineChartView!
+    
+    var numbers : [Double] = [0.0,2.3,8.1,1.5,5.0]
+    let xLabels: [String] = ["Mon","Tue","Wed"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpPieChart()
+        
+        var lineChartEntry = [ChartDataEntry]()
+        
+        for i in 0..<numbers.count {
+
+                    let value = ChartDataEntry(x: Double(i), y: numbers[i]) // here we set the X and Y status in a data chart entry
+                    lineChartEntry.append(value) // here we add it to the data set
+        }
+        
+        let line1 = LineChartDataSet(entries: lineChartEntry, label: "Expense") //Here we convert lineChartEntry to a LineChartDataSet
+        line1.colors = [NSUIColor.black]
+        line1.drawCirclesEnabled = false
+        line1.mode = .cubicBezier
+        line1.lineWidth = 3
+        line1.fill = ColorFill(color: .black)
+        line1.fillAlpha = CGFloat(0.1)
+        line1.drawFilledEnabled = true
+
+        let data = LineChartData() //This is the object that will be added to the chart
+        data.append(line1) //Adds the line to the dataSet
+                
+        lineChartView.data = data //finally - it adds the chart data to the chart and causes an update
+        lineChartView.xAxis.enabled = false
+        lineChartView.leftAxis.enabled = false
+        lineChartView.rightAxis.enabled = false
+        lineChartView.animate(xAxisDuration: 0.5)
+//        lineChartView.xAxis.labelPosition = .bottom
+//        lineChartView.xAxis.drawGridLinesEnabled = false
     }
 
-    func setUpPieChart() {
-        pieChartView.chartDescription.enabled = false
-        pieChartView.drawHoleEnabled = false
-        pieChartView.rotationAngle = 0
-        pieChartView.rotationEnabled = false
-        pieChartView.drawEntryLabelsEnabled = false
-        pieChartView.isUserInteractionEnabled = false
-        
-        var entries: [PieChartDataEntry] = Array()
-        entries.append(PieChartDataEntry(value: 50.0, label: "Bill"))
-        entries.append(PieChartDataEntry(value: 30.0, label: "Meal"))
-        entries.append(PieChartDataEntry(value: 20.0, label: "Grocery"))
-        entries.append(PieChartDataEntry(value: 10.0, label: "Snacks"))
-        entries.append(PieChartDataEntry(value: 40.0, label: "Personal"))
-        
-        let dataSet = PieChartDataSet(entries: entries, label: "")
-        let c1 = NSUIColor(hex: 0x3A015C)
-        let c2 = NSUIColor(hex: 0x4F0147)
-        let c3 = NSUIColor(hex: 0x35012C)
-        let c4 = NSUIColor(hex: 0x290025)
-        let c5 = NSUIColor(hex: 0x11001C)
-        
-        dataSet.colors = [c1, c2, c3, c4, c5]
-        dataSet.drawValuesEnabled = false
-        
-        pieChartView.data = PieChartData(dataSet: dataSet)
-    }
 }

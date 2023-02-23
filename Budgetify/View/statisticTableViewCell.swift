@@ -12,10 +12,14 @@ class statisticTableViewCell: UITableViewCell {
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var containerView: UIView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        containerView.layer.cornerRadius = 20
+        containerView.backgroundColor = UIColor(hex: 0xFBFBFB)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,7 +30,7 @@ class statisticTableViewCell: UITableViewCell {
     
     func configCell(category: Category) {
         categoryLabel.text = category.name
-        amountLabel.text = "$ \(category.totalAmount)"
+        amountLabel.text = "- $ \(category.totalAmount)"
         
         switch category.name {
         case "Bill":

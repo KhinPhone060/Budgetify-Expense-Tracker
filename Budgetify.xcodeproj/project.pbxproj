@@ -30,7 +30,9 @@
 		F737195729A76BDC00EE247E /* WalletTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F737195529A76BDC00EE247E /* WalletTableViewCell.xib */; };
 		F771CCB9299EFD260088D9CE /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F771CCB8299EFD260088D9CE /* WalletViewController.swift */; };
 		F7773477299EE53F005B6DA8 /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7773476299EE53F005B6DA8 /* StatisticViewController.swift */; };
+		F7BC859329A8E56D00E9D7C1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BC859229A8E56D00E9D7C1 /* User.swift */; };
 		F7BE364C2997A9F800F7F528 /* CustomTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE364B2997A9F800F7F528 /* CustomTabBarVC.swift */; };
+		F7D0325B29A7BA600071396E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0325A29A7BA600071396E /* ProfileViewController.swift */; };
 		F7D168C2299E050500C9C8E2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D168C1299E050500C9C8E2 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +64,9 @@
 		F737195529A76BDC00EE247E /* WalletTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletTableViewCell.xib; sourceTree = "<group>"; };
 		F771CCB8299EFD260088D9CE /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		F7773476299EE53F005B6DA8 /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
+		F7BC859229A8E56D00E9D7C1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F7BE364B2997A9F800F7F528 /* CustomTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarVC.swift; sourceTree = "<group>"; };
+		F7D0325A29A7BA600071396E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F7D168C1299E050500C9C8E2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +153,7 @@
 				F7085FB3299E11E000D1FF7D /* SignInViewController.swift */,
 				F7773476299EE53F005B6DA8 /* StatisticViewController.swift */,
 				F771CCB8299EFD260088D9CE /* WalletViewController.swift */,
+				F7D0325A29A7BA600071396E /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			children = (
 				F7010F38299BB326002F318F /* Transaction.swift */,
 				F72FA35729A3907C0058C8DB /* Category.swift */,
+				F7BC859229A8E56D00E9D7C1 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,6 +308,7 @@
 				F7773477299EE53F005B6DA8 /* StatisticViewController.swift in Sources */,
 				F737195629A76BDC00EE247E /* WalletTableViewCell.swift in Sources */,
 				F771CCB9299EFD260088D9CE /* WalletViewController.swift in Sources */,
+				F7D0325B29A7BA600071396E /* ProfileViewController.swift in Sources */,
 				F72056F4299A20F9004D87CE /* TransactionTableViewCell.swift in Sources */,
 				F7010F39299BB326002F318F /* Transaction.swift in Sources */,
 				F72FA35829A3907C0058C8DB /* Category.swift in Sources */,
@@ -313,6 +320,7 @@
 				F71B287D29978B8B00DF297F /* AppDelegate.swift in Sources */,
 				F71B287F29978B8B00DF297F /* SceneDelegate.swift in Sources */,
 				F7010F3D299BC1C9002F318F /* Constants.swift in Sources */,
+				F7BC859329A8E56D00E9D7C1 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

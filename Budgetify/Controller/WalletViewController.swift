@@ -55,36 +55,39 @@ class WalletViewController: UIViewController {
                             let data = doc.data()
                             let type = data["type"] as! String
                             let amount = Double(data["amount"] as! String)
+                            let userEmail = data["user"] as! String
                             
-                            if type == "Expense" {
-                                self.totalAmount -= amount!
-                            } else if querySnapshot?.documents.count == 0 {
-                                print("no document")
-                            } else {
-                                self.totalAmount += amount!
-                            }
-                            self.numbers.append(self.totalAmount)
-                            
-                            DispatchQueue.main.async {
-                                for i in 0..<self.numbers.count {
-
-                                    let value = ChartDataEntry(x: Double(i), y: self.numbers[i])
-                                    self.lineChartEntry.append(value)
+                            if Auth.auth().currentUser?.email == userEmail {
+                                if type == "Expense" {
+                                    self.totalAmount -= amount!
+                                } else if querySnapshot?.documents.count == 0 {
+                                    print("no document")
+                                } else {
+                                    self.totalAmount += amount!
                                 }
+                                self.numbers.append(self.totalAmount)
                                 
-                                let line1 = LineChartDataSet(entries: self.lineChartEntry,label: "transactions")
-                                line1.colors = [NSUIColor(hex: 0x438883)]
-                                line1.drawCirclesEnabled = false
-                                line1.mode = .linear
-                                line1.lineWidth = 3
-                                line1.fill = ColorFill(color: NSUIColor(hex: 0x438883))
-                                line1.fillAlpha = CGFloat(0.1)
-                                line1.drawFilledEnabled = true
+                                DispatchQueue.main.async {
+                                    for i in 0..<self.numbers.count {
 
-                                let data = LineChartData()
-                                data.append(line1)
-                                self.lineChartView.data = data
-                                self.balanceLabel.text = "$ "+String(self.numbers.last ?? 0.0)
+                                        let value = ChartDataEntry(x: Double(i), y: self.numbers[i])
+                                        self.lineChartEntry.append(value)
+                                    }
+                                    
+                                    let line1 = LineChartDataSet(entries: self.lineChartEntry,label: "transactions")
+                                    line1.colors = [NSUIColor(hex: 0x438883)]
+                                    line1.drawCirclesEnabled = false
+                                    line1.mode = .linear
+                                    line1.lineWidth = 3
+                                    line1.fill = ColorFill(color: NSUIColor(hex: 0x438883))
+                                    line1.fillAlpha = CGFloat(0.1)
+                                    line1.drawFilledEnabled = true
+
+                                    let data = LineChartData()
+                                    data.append(line1)
+                                    self.lineChartView.data = data
+                                    self.balanceLabel.text = "$ "+String(self.numbers.last ?? 0.0)
+                                }
                             }
                         }
                     }

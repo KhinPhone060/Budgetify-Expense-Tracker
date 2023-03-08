@@ -29,8 +29,8 @@ class SignUpViewController: UIViewController {
                 if let e = error {
                     print(e.localizedDescription)
                 } else {
-                    //Navigate to chat view controller
-                    self.navigateBackToHome()
+                    //continue to setup vc
+                    self.performSegue(withIdentifier: "goToSetUp", sender: self)
                 }
             }
         }

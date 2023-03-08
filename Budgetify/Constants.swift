@@ -19,5 +19,8 @@ struct Constants {
         static let date = "date"
         static let month = "month"
         static let year = "year"
+        
+        static let userName = "userName"
+        static let balance = "balance"
     }
 }

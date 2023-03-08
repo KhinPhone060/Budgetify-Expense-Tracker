@@ -18,7 +18,6 @@ class AddViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
-    
     @IBOutlet weak var dateTextField: UITextField!
     var transaction = [Transaction]()
     

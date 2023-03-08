@@ -16,14 +16,17 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var totalBalanceLabel: UILabel!
     @IBOutlet weak var incomeLabel: UILabel!
     @IBOutlet weak var expenseLabel: UILabel!
+    @IBOutlet weak var displayNameLabel: UILabel!
     
     var transactionList = [Transaction]()
     
-    var totalBalance: Float = 20000.0
-    var totalIncome: Float = 0.0
-    var totalExpense: Float = 0.0
+    var totalBalance: Double = 0.0
+    var totalIncome: Double = 0.0
+    var totalExpense: Double = 0.0
+    var displayName: String = ""
     
     let db = Firestore.firestore()
+    let currentUser = Auth.auth().currentUser?.email
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +35,9 @@ class HomeViewController: UIViewController {
             self.navigateToSignUp()
         } else {
             loadTransactionList()
-            loadTotalIncome()
             loadTotalExpense()
+            loadTotalIncome()
+            loadUserBalance()
             
             walletCardView.layer.cornerRadius = 20
             walletCardView.layer.shadowColor = UIColor(named: "BackgroundColor")?.cgColor
@@ -110,7 +114,7 @@ extension HomeViewController {
                             
                             if let user = data["user"] as? String {
                                 if Auth.auth().currentUser?.email == user {
-                                    let income = Float(data["amount"] as! String)
+                                    let income = Double(data["amount"] as! String)
                                     
                                     guard income != nil else {
                                         return
@@ -145,7 +149,7 @@ extension HomeViewController {
                             
                             if let user = data["user"] as? String {
                                 if Auth.auth().currentUser?.email == user {
-                                    let expense = Float(data["amount"] as! String)
+                                    let expense = Double(data["amount"] as! String)
                                     
                                     guard expense != nil else {
                                         return
@@ -163,6 +167,33 @@ extension HomeViewController {
                         }
                     }
                     
+                }
+            }
+    }
+    
+    func loadUserBalance() {
+        db.collection("user")
+            .whereField("user", isEqualTo: currentUser!)
+            .getDocuments() { querySnapshot, err in
+                if let e = err {
+                    print("There was problem retrieving data from the firestore \(e)")
+                } else if querySnapshot?.documents.count == 0 {
+                    print("no user")
+                } else {
+                    if let snapshotDocuments = querySnapshot?.documents {
+                        for doc in snapshotDocuments {
+                            let data = doc.data()
+                            let balance = Double(((data["balance"] as? String)!))
+                            let userName = data["userName"] as? String
+                            
+                            self.totalBalance = balance ?? 0.0
+                            self.displayName = userName!
+                        }
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.totalBalanceLabel.text = "$ "+String(self.totalBalance)
+                    self.displayNameLabel.text = self.displayName
                 }
             }
     }

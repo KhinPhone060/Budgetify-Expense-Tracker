@@ -96,31 +96,34 @@ class StatisticViewController: UIViewController {
                                 let expense = Double(data["amount"] as! String)
                                 let type = data["type"] as! String
                                 let category = data["category"] as! String
+                                let userEmail = data["user"] as! String
                                 
-                                if type == "Expense" {
-                                    switch category {
-                                    case "Bill":
-                                        self.bill += expense!
-                                    case "Shopping":
-                                        self.shopping += expense!
-                                    case "Tax":
-                                        self.tax += expense!
-                                    case "Food & Drinks":
-                                        self.foodAndDrinks += expense!
-                                    case "Housing":
-                                        self.housing += expense!
-                                    case "Transportation":
-                                        self.transportation += expense!
-                                    case "Vehicle":
-                                        self.vehicle += expense!
-                                    case "Life & Entertainment":
-                                        self.lifeAndEntertainment += expense!
-                                    case "Communication":
-                                        self.communicationAndPC += expense!
-                                    case "Investment":
-                                        self.investment += expense!
-                                    default:
-                                        print("nocategory")
+                                if Auth.auth().currentUser?.email == userEmail {
+                                    if type == "Expense" {
+                                        switch category {
+                                        case "Bill":
+                                            self.bill += expense!
+                                        case "Shopping":
+                                            self.shopping += expense!
+                                        case "Tax":
+                                            self.tax += expense!
+                                        case "Food & Drinks":
+                                            self.foodAndDrinks += expense!
+                                        case "Housing":
+                                            self.housing += expense!
+                                        case "Transportation":
+                                            self.transportation += expense!
+                                        case "Vehicle":
+                                            self.vehicle += expense!
+                                        case "Life & Entertainment":
+                                            self.lifeAndEntertainment += expense!
+                                        case "Communication":
+                                            self.communicationAndPC += expense!
+                                        case "Investment":
+                                            self.investment += expense!
+                                        default:
+                                            print("nocategory")
+                                        }
                                     }
                                 }
                             }

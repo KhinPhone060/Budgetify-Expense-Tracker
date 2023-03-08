@@ -8,6 +8,5 @@
 import Foundation
 struct User {
     let name: String?
-    let userImage: String?
     let balance: String?
 }

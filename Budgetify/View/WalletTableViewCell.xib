@@ -42,7 +42,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ftW-nS-yg8" firstAttribute="leading" secondItem="bt4-Oq-bY2" secondAttribute="leading" constant="10" id="3oB-dp-JMe"/>
-                            <constraint firstAttribute="trailing" secondItem="ftW-nS-yg8" secondAttribute="trailing" constant="275" id="9JT-WL-508"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ftW-nS-yg8" secondAttribute="trailing" constant="20" id="9JT-WL-508"/>
                             <constraint firstItem="5WB-cu-i08" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="E5g-06-van" secondAttribute="trailing" constant="20" id="Bs4-7g-vv6"/>
                             <constraint firstAttribute="bottom" secondItem="ftW-nS-yg8" secondAttribute="bottom" constant="17" id="F30-Dl-FAw"/>
                             <constraint firstItem="E5g-06-van" firstAttribute="top" secondItem="bt4-Oq-bY2" secondAttribute="top" constant="17" id="HMm-2u-ETK"/>

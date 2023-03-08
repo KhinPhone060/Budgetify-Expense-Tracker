@@ -14,22 +14,24 @@ class WalletViewController: UIViewController {
 
     @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var balanceLabel: UILabel!
+    @IBOutlet weak var chartContainerView: UIView!
     @IBOutlet weak var walletTableView: UITableView!
     
     var numbers = [Double]()
     let xLabels: [String] = ["Mon","Tue","Wed"]
     var lineChartEntry = [ChartDataEntry]()
+    var totalBalance: Double = 0.0
     
     let db = Firestore.firestore()
+    let currentUser = Auth.auth().currentUser?.email
     var transactionList = [Transaction]()
-    
-    var totalAmount: Double = 20000.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadWalletData()
         loadTransactionList()
+        loadUserBalance()
         
         //line chart view
         lineChartView.xAxis.enabled = false
@@ -38,6 +40,12 @@ class WalletViewController: UIViewController {
         lineChartView.animate(xAxisDuration: 0.5)
         lineChartView.xAxis.labelPosition = .bottom
         lineChartView.xAxis.drawGridLinesEnabled = false
+        
+        chartContainerView.backgroundColor = UIColor(hex: 0xFBFBFB)
+        chartContainerView.layer.cornerRadius = 20
+        chartContainerView.layer.shadowColor = UIColor.black.cgColor
+        chartContainerView.layer.shadowOpacity = 0.4
+        chartContainerView.layer.shadowOffset = CGSize(width: 8, height: 8)
         
         //register cell
         let cellNib = UINib(nibName: "WalletTableViewCell", bundle: nil)
@@ -59,13 +67,13 @@ class WalletViewController: UIViewController {
                             
                             if Auth.auth().currentUser?.email == userEmail {
                                 if type == "Expense" {
-                                    self.totalAmount -= amount!
+                                    self.totalBalance -= amount!
                                 } else if querySnapshot?.documents.count == 0 {
                                     print("no document")
                                 } else {
-                                    self.totalAmount += amount!
+                                    self.totalBalance += amount!
                                 }
-                                self.numbers.append(self.totalAmount)
+                                self.numbers.append(self.totalBalance)
                                 
                                 DispatchQueue.main.async {
                                     for i in 0..<self.numbers.count {
@@ -130,6 +138,30 @@ extension WalletViewController {
                             }
                         }
                     }
+                }
+            }
+    }
+    
+    func loadUserBalance() {
+        db.collection("user")
+            .whereField("user", isEqualTo: currentUser!)
+            .getDocuments() { querySnapshot, err in
+                if let e = err {
+                    print("There was problem retrieving data from the firestore \(e)")
+                } else if querySnapshot?.documents.count == 0 {
+                    print("no user")
+                } else {
+                    if let snapshotDocuments = querySnapshot?.documents {
+                        for doc in snapshotDocuments {
+                            let data = doc.data()
+                            let balance = Double(((data["balance"] as? String)!))
+                            
+                            self.totalBalance = balance ?? 0.0
+                        }
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.balanceLabel.text = "$ "+String(self.totalBalance)
                 }
             }
     }

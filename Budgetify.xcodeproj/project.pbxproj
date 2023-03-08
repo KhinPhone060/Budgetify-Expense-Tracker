@@ -32,6 +32,7 @@
 		F7773477299EE53F005B6DA8 /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7773476299EE53F005B6DA8 /* StatisticViewController.swift */; };
 		F7BC859329A8E56D00E9D7C1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BC859229A8E56D00E9D7C1 /* User.swift */; };
 		F7BE364C2997A9F800F7F528 /* CustomTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE364B2997A9F800F7F528 /* CustomTabBarVC.swift */; };
+		F7BE4D7329A9EF6900FF549A /* SetUpAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE4D7229A9EF6900FF549A /* SetUpAccountViewController.swift */; };
 		F7D0325B29A7BA600071396E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D0325A29A7BA600071396E /* ProfileViewController.swift */; };
 		F7D168C2299E050500C9C8E2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D168C1299E050500C9C8E2 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		F7773476299EE53F005B6DA8 /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		F7BC859229A8E56D00E9D7C1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F7BE364B2997A9F800F7F528 /* CustomTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarVC.swift; sourceTree = "<group>"; };
+		F7BE4D7229A9EF6900FF549A /* SetUpAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpAccountViewController.swift; sourceTree = "<group>"; };
 		F7D0325A29A7BA600071396E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F7D168C1299E050500C9C8E2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +156,7 @@
 				F7773476299EE53F005B6DA8 /* StatisticViewController.swift */,
 				F771CCB8299EFD260088D9CE /* WalletViewController.swift */,
 				F7D0325A29A7BA600071396E /* ProfileViewController.swift */,
+				F7BE4D7229A9EF6900FF549A /* SetUpAccountViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7BE4D7329A9EF6900FF549A /* SetUpAccountViewController.swift in Sources */,
 				F7085FB4299E11E000D1FF7D /* SignInViewController.swift in Sources */,
 				F7192CCD299D3C7800019524 /* Extension.swift in Sources */,
 				F7BE364C2997A9F800F7F528 /* CustomTabBarVC.swift in Sources */,

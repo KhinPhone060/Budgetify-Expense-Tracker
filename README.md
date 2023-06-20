@@ -26,13 +26,13 @@ This is iOS expense tracker app that can be used to record your daily transactio
 	pod 'UITextField+Shake'
 	pod 'Charts'
 ```
-2. Pod
+3. Pod
 ```bash
 pod install
 ```
-3. Open the project in XCode
+4. Open the project in XCode
 ```bash
 $ open Budgetify.xcworkspace
 ```
-4. Compile and run in your XCode simulator
+5. Compile and run in your XCode simulator
 

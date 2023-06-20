@@ -18,6 +18,14 @@ This is iOS expense tracker app that can be used to record your daily transactio
   $ git clone https://github.com/KhinPhone060/Budgetify-Expense-Tracker.git
   $ cd Budgetify-Expense-Tracker
 ```
+2. In Podfile
+```bash
+  pod 'iOSDropDown'
+	pod 'FirebaseAuth'
+	pod 'FirebaseFirestore'
+	pod 'UITextField+Shake'
+	pod 'Charts'
+```
 2. Pod
 ```bash
 pod install
